@@ -12,11 +12,15 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <p>Friends Night In</p>
+        </div>
+      </nav>
       <h1>Friends Night In</h1>
       <!-- Columns -->
-      <div class="columns is-mobile is-half">
-     
-        <div class="column">Recipe</div>
+      <div class="columns is-mobile is-half row">
+        <div class="col-md-6">Recipe</div>
         <!-- Left side -->
         <div class="level-left">
           <div class="level-item"></div>
@@ -24,23 +28,33 @@
             <div class="field has-addons"></div>
           </div>
           <h2>Search for Recipe</h2>
-          <input id=recipeInput class="input is-rounded" type="text" placeholder="Rounded input">
-          <button id=recipeBtn class="button is-rounded">Submit</button>
+          <input
+            id="recipeInput"
+            class="input is-rounded"
+            type="text"
+            placeholder="Rounded input"
+          />
+          <button id="recipeBtn" class="button is-rounded">Submit</button>
         </div>
+        
+        <!-- Right side -->
+        <div class="col-md-6">Movies</div>
 
-        <div class="column">Movies</div>
-
-         <!-- Right side -->
-         <div class="level-left">
+        <div class="level-left">
           <div class="level-item"></div>
           <div class="level-item">
             <div class="field has-addons"></div>
           </div>
           <h2>Search for Movies</h2>
-          <input id=movieInput class="input is-rounded" type="text" placeholder="Rounded input">
-          <button id=movieBtn class="button is-rounded">Submit</button>
+          <input
+            id="movieInput"
+            class="input is-rounded"
+            type="text"
+            placeholder="Rounded input"
+          />
+          <button id="movieBtn" class="button is-rounded">Submit</button>
+          <div id="poster"></div>
         </div>
-    
       </div>
     </body>
     <script src="script.js"></script>

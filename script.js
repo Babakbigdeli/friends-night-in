@@ -26,12 +26,26 @@ $("#movieBtn").on("click", function (){
 // movie button function/ API call
 function movieData(movieSearch) {
   $.ajax({
-    url: "http://www.omdbapi.com/?i=tt3896198&apikey=e7dd88c3" + movieSearch,
+    url: "https://www.omdbapi.com/?apikey=e7dd88c3&t=" + movieSearch, 
     method: "GET",
   }).then(function (response){
     console.log("I am the ", response);
+  // posterImage(response.Poster)
+  var posterUrl = response.Poster; 
+  console.log(posterUrl)
+  var iconHtml = $("<img>").attr("src", posterUrl);
+  $("#poster").append(iconHtml);
   });
 }
 
+// movie poster image function
+// function posterImage(posterURL) {
+//   $.ajax({
+//     url: posterURL, 
+//     method: "GET",
+//   }).then(function (response){
+//     console.log("I am the ", response);
+//   });
+// 
 
 })
