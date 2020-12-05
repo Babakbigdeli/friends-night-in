@@ -14,7 +14,7 @@ function recipeData(recipeSearch){
       withCredentials: true
    }
   }).then(function(response){
-    console.log(response);
+    console.log("I am the ", response);
   });
 }
 })
