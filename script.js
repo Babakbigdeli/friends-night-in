@@ -37,15 +37,4 @@ function movieData(movieSearch) {
   $("#poster").append(iconHtml);
   });
 }
-
-// movie poster image function
-// function posterImage(posterURL) {
-//   $.ajax({
-//     url: posterURL, 
-//     method: "GET",
-//   }).then(function (response){
-//     console.log("I am the ", response);
-//   });
-// 
-
 })
