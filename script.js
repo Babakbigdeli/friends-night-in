@@ -6,5 +6,15 @@ $(document).ready(function(){
     recipeData(recipeSearch);
 
   });
-
+function recipeData(recipeSearch){
+  $.ajax({
+    url: "https://api.edamam.com/search/q=" + recipeSearch ,
+    type: "GET",
+    xhrFields: {
+      withCredentials: true
+   }
+  }).then(function(response){
+    console.log(response);
+  });
+}
 })
