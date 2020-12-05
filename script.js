@@ -1,36 +1,20 @@
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple",
-  "method": "GET",
-  "headers": {
-      "x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com",
-      "x-rapidapi-key": "dbe3f6aea3mshcb668f8d0f325d8p1c4d2ajsnb5fd0a60e96d"
-  }
+
+//search recipe search button
+$(document).ready(function(){
+  $("#recipeBtn").on("click", function(){
+    var recipeSearch = $("#recipeInput").val();
+    recipeData(recipeSearch);
+
+  });
+function recipeData(recipeSearch){
+  $.ajax({
+    url: "https://api.edamam.com/search/q=" + recipeSearch ,
+    type: "GET",
+    xhrFields: {
+      withCredentials: true
+   }
+  }).then(function(response){
+    console.log(response);
+  });
 }
-$.ajax(settings).done(function (response) {
-  console.log(response);
-
-//input code ticket 4
-
-
-
-$(document).ready(function () {
-    var apiKey = "e7dd88c3";
-    $(".btn").on("click", function () {
-      var searchMovie = $("#myInput").val();
-      console.log(searchMovie);
-function searchMovie
-      $.ajax({
-        type: "GET",
-        url: "http://www.omdbapi.com/?i=tt3896198&apikey=" + apikey + searchMovie 
-        dataType: "json",
-
-
-
-        //input code ticket 5
-
-      }
-    //final ticket to complete program
-     
-    })
+})
