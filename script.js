@@ -36,7 +36,7 @@ function movieData(movieSearch) {
   // var iconHtml = $("<img>").attr("src", posterUrl);
   // $("#poster").append(iconHtml);
   // });
-
+$("#poster").empty();
   // appending data to card
   var card = $("<div>").addClass("card");
   var poster = $("<p>").addClass("card-image");
@@ -49,11 +49,12 @@ function movieData(movieSearch) {
   var actor = $("<p>").addClass("card-text").text(response.Actors);
   var year = $("<p>").addClass("card-text").text(response.Year);
 
-  card.append(title, actor, year);
+  poster.append(iconHtml)
+  cardBody.append(poster, title, actor, year);
   card.append(cardBody);
 
-  $("#poster").append(iconHtml);
-  $("#poster").append(card);
+  // $("#poster").append(iconHtml);
+  $(".level-right").append(card);
 
 });
 

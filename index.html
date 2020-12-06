@@ -5,6 +5,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Friends Night In</title>
+      <link rel="stylesheet" href="style.css">
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
@@ -12,39 +13,39 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <p>Friends Night In</p>
+      <nav class="navbar is-success" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-family-secondary has-text-weight-semibold has-text-centered">
+          Friends Night In
         </div>
       </nav>
 
       <!-- Columns -->
-      <div class="columns is-mobile is-half">
+      <div class="columns">
         <!-- Left side -->
 
         <div class="column level-left">
           <h3>Recipe</h3>
-          <h2>Search for Recipe</h2>
+        
           <input
             id="recipeInput"
             class="input is-rounded"
             type="text"
-            placeholder="Rounded input"
+            placeholder="Search for Recipe"
           />
           <button id="recipeBtn" class="button is-rounded">Submit</button>
         </div>
 
         <div class="column level-right">
           <h3>Movies</h3>
-          <h2>Search for Movies</h2>
+         
           <input
             id="movieInput"
             class="input is-rounded"
             type="text"
-            placeholder="Rounded input"
+            placeholder="Search for a Movie"
           />
           <button id="movieBtn" class="button is-rounded">Submit</button>
-          <div id="poster"></div>
+    
         </div>
       </div>
     </body>

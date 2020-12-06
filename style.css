@@ -1,5 +1,9 @@
-/*ticket 3 style sheet
+* {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-
-
+}
 
