@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <html>
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Friends Night In</title>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-      />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
-      <h1>Friends Night In</h1>
-      <!-- Columns -->
-      <div class="columns is-mobile is-half">
-     
-        <div class="column">Recipe</div>
-        <!-- Left side -->
-        <div class="level-left">
-          <div class="level-item"></div>
-          <div class="level-item">
-            <div class="field has-addons"></div>
-          </div>
-          <h2>Search for Recipe</h2>
-          <input id=recipeInput class="input is-rounded" type="text" placeholder="Rounded input">
-          <button id=recipeBtn class="button is-rounded">Submit</button>
-        </div>
+<html>
 
-        <div class="column">Movies</div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Friends Night In</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
 
-         <!-- Right side -->
-         <div class="level-left">
-          <div class="level-item"></div>
-          <div class="level-item">
-            <div class="field has-addons"></div>
-          </div>
-          <h2>Search for Movies</h2>
-          <input class="input is-rounded" type="text" placeholder="Rounded input">
-          <button class="button is-rounded">Submit</button>
+<body>
+  <nav class="navbar is-success" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand is-family-secondary has-text-weight-semibold has-text-centered">
+      Friends Night In
+    </div>
+  </nav>
+
+  <!-- Columns -->
+  <div class="columns">
+    <!-- Left side -->
+    <div class="column level-left">
+      <div class="recipe-main-card card">
+        <div class="card-body">
+          <h3>Recipe</h3>
+          <input id="recipeInput" class="input is-rounded" type="text" placeholder="Search for Recipe" />
+          <button id="recipeBtn" class="button is-rounded">Submit</button>
+          <div class="recipe-card"></div>
         </div>
-    
       </div>
-    </body>
-    <script src="script.js"></script>
-  </html>
+    </div>
+
+    <div class="column level-right">
+      <div class="movie-main-card card">
+        <div class="card-body">
+          <h3>Movies</h3>
+          <input id="movieInput" class="input is-rounded" type="text" placeholder="Search for a Movie" />
+          <button id="movieBtn" class="button is-rounded">Submit</button>
+          <div class="movie-card">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>
+
 </html>
