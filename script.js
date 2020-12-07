@@ -13,7 +13,24 @@ function recipeData(recipeSearch){
     method: "GET",
   }).then(function(response){
     console.log("I am the ", response);
+    $(".recipe-card").empty();
+   // appending recipe data to card 
+
+  var image = $("<p>").addClass("card-image");
+  var imageUrl = response.hits[0].recipe.image; 
+  var iconHtml = $("<img>").attr("src", imageUrl);
+  
+  var label = $("<p>").addClass("card-text").text(response.hits[0].recipe.label);
+  var recipeUrl = $("<p>").addClass("card-text").text(response.hits[0].recipe.shareAs);
+  var source = $("<p>").addClass("card-text").text(response.hits[0].recipe.source);
+  
+  image.append(iconHtml)
+  $(".recipe-card").append(image, label, recipeUrl, source);
+  
+  $(".level-left").append(card);
   });
+  
+
 }
 
 //search movie button 
@@ -31,22 +48,19 @@ function movieData(movieSearch) {
   }).then(function (response){
     console.log("I am the ", response);
   
-$(".card-body").empty();
-  // appending data to card
-  var card = $("<div>").addClass("card");
+$(".movie-card").empty();
+  // appending movie data to card
+
   var poster = $("<p>").addClass("card-image");
   var posterUrl = response.Poster; 
-  console.log(posterUrl)
   var iconHtml = $("<img>").attr("src", posterUrl);
- // $("#poster").append(iconHtml);
-  var cardBody = $("<div>").addClass("card-body");
   var title = $("<p>").addClass("card-text").text(response.Title);
   var actor = $("<p>").addClass("card-text").text(response.Actors);
   var year = $("<p>").addClass("card-text").text(response.Year);
 
   poster.append(iconHtml)
-  cardBody.append(poster, title, actor, year);
-  card.append(cardBody);
+  $(".movie-card").append(poster, title, actor, year);
+
 
   $(".level-right").append(card);
 
