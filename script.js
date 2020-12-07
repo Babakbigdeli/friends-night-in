@@ -19,13 +19,13 @@ function recipeData(recipeSearch){
   var image = $("<p>").addClass("card-image");
   var imageUrl = response.hits[0].recipe.image; 
   var iconHtml = $("<img>").attr("src", imageUrl);
-  
+  var recipeLink = $("<a>").attr("href", response.hits[0].recipe.shareAs).attr("target", "_blank").text("Read your recipe at " + response.hits[0].recipe.source);
   var label = $("<p>").addClass("card-text").text(response.hits[0].recipe.label);
   var recipeUrl = $("<p>").addClass("card-text").text(response.hits[0].recipe.shareAs);
   var source = $("<p>").addClass("card-text").text(response.hits[0].recipe.source);
   
   image.append(iconHtml)
-  $(".recipe-card").append(image, label, recipeUrl, source);
+  $(".recipe-card").append(image, recipeLink, label, recipeUrl, source);
   
   $(".level-left").append(card);
   });
