@@ -30,13 +30,8 @@ function movieData(movieSearch) {
     method: "GET",
   }).then(function (response){
     console.log("I am the ", response);
-  // posterImage(response.Poster)
-  // var posterUrl = response.Poster; 
-  // console.log(posterUrl)
-  // var iconHtml = $("<img>").attr("src", posterUrl);
-  // $("#poster").append(iconHtml);
-  // });
-$("#poster").empty();
+  
+$(".card-body").empty();
   // appending data to card
   var card = $("<div>").addClass("card");
   var poster = $("<p>").addClass("card-image");
@@ -53,7 +48,6 @@ $("#poster").empty();
   cardBody.append(poster, title, actor, year);
   card.append(cardBody);
 
-  // $("#poster").append(iconHtml);
   $(".level-right").append(card);
 
 });
