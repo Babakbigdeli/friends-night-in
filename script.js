@@ -6,7 +6,33 @@ $(document).ready(function(){
     recipeData(recipeSearch);
 
   });
-  // recipe button funciton/ API call
+
+//local storage for recipe
+var recipePreviouslySearched = 
+JSON.parse(localStorage.getItem("recipe")) || [];
+function createRecipeList(recipe) {
+  $(".recipe-history").empty();
+  for (var i = 0; i < recipe.length; i++) {
+    var listItem = $("<li>").text(recipe[i]);
+    $(".recipe-history").append(listItem);
+    
+  }
+}
+
+//local storage for movie
+var moviePreviouslySearched = 
+JSON.parse(localStorage.getItem("movie")) || [];
+
+function createMovieList(movie) {
+  $(".movie-history").empty();
+  for (var i = 0; i < movie.length; i++) {
+    var listItem = $("<li>").text(movie[i]);
+    $(".movie-history").append(listItem);
+    
+  }
+}
+
+  //recipe button funciton/ API call
 function recipeData(recipeSearch){
   $.ajax({
     url: "https://api.edamam.com/search?app_id=40897fdb&app_key=e7085ffc3bbf333e4fcc1dfd79fa54fd&q=" + recipeSearch,
@@ -14,7 +40,19 @@ function recipeData(recipeSearch){
   }).then(function(response){
     console.log("I am the ", response);
     $(".recipe-card").empty();
-   // appending recipe data to card 
+
+  //add to local storage
+if (!recipePreviouslySearched.includes(recipeSearch)) {
+  recipePreviouslySearched.push(recipeSearch);
+  localStorage.setItem(
+    "recipe", 
+    JSON.stringify(recipePreviouslySearched)
+  );
+}
+$(".recipe-history").empty();
+createRecipeList(recipePreviouslySearched);
+
+   //appending recipe data to card 
 
   var image = $("<p>").addClass("card-image");
   var imageUrl = response.hits[0].recipe.image; 
@@ -30,7 +68,7 @@ function recipeData(recipeSearch){
   $(".level-left").append(card);
   });
   
-
+  createRecipeList(recipePreviouslySearched);
 }
 
 //search movie button 
@@ -40,7 +78,7 @@ $("#movieBtn").on("click", function (){
 
 });
 
-// movie button function/ API call
+//movie button function/ API call
 function movieData(movieSearch) {
   $.ajax({
     url: "https://www.omdbapi.com/?apikey=e7dd88c3&t=" + movieSearch, 
@@ -49,7 +87,19 @@ function movieData(movieSearch) {
     console.log("I am the ", response);
   
 $(".movie-card").empty();
-  // appending movie data to card
+
+//add to movie storage
+if (!moviePreviouslySearched.includes(movieSearch)) {
+  moviePreviouslySearched.push(movieSearch);
+  localStorage.setItem(
+    "movie", 
+    JSON.stringify(moviePreviouslySearched)
+  );
+}
+$(".movie-history").empty();
+createMovieList(moviePreviouslySearched);
+
+//appending movie data to card
 
   var poster = $("<p>").addClass("card-image");
   var posterUrl = response.Poster; 
@@ -66,4 +116,5 @@ $(".movie-card").empty();
 
 });
 
-};})
+};
+})
