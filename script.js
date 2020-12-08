@@ -6,6 +6,22 @@ $(document).ready(function(){
     recipeData(recipeSearch);
 
   });
+//local storage for recipe
+var recipePreviouslySearched = 
+JSON.parse(localStorage.getItem("recipe")) || [];
+function createRecipeList(recipe) {
+  $(".recipe-history").empty();
+  for (var i = 0; i < recipe.length; i++) {
+    var listItem = $("<li>").text(recipe[i]);
+    $(".recipe-history").append(listItem);
+    
+  }
+}
+
+
+
+
+
   // recipe button funciton/ API call
 function recipeData(recipeSearch){
   $.ajax({
@@ -30,7 +46,7 @@ function recipeData(recipeSearch){
   $(".level-left").append(card);
   });
   
-
+  createRecipeList(recipePreviouslySearched);
 }
 
 //search movie button 
@@ -66,4 +82,5 @@ $(".movie-card").empty();
 
 });
 
-};})
+};
+})
