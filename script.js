@@ -30,6 +30,17 @@ function recipeData(recipeSearch){
   }).then(function(response){
     console.log("I am the ", response);
     $(".recipe-card").empty();
+//add to local storage
+if (!recipePreviouslySearched.includes(recipeSearch)) {
+  recipePreviouslySearched.push(recipeSearch);
+  localStorage.setItem(
+    "recipe", 
+    JSON.stringify(recipePreviouslySearched)
+  );
+}
+$(".recipe-history").empty();
+createRecipeList(recipePreviouslySearched);
+
    // appending recipe data to card 
 
   var image = $("<p>").addClass("card-image");
