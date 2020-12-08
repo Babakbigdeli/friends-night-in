@@ -38,7 +38,9 @@ function recipeData(recipeSearch){
     url: "https://api.edamam.com/search?app_id=40897fdb&app_key=e7085ffc3bbf333e4fcc1dfd79fa54fd&q=" + recipeSearch,
     method: "GET",
   }).then(function(response){
-    console.log("I am the ", response);
+    // randomised selection of recipe
+    var randomRecipe = response.hits[Math.floor(Math.random() * response.hits.length)].recipe
+    console.log("I am the random recipe", randomRecipe);
     $(".recipe-card").empty();
 
   //add to local storage
@@ -55,12 +57,12 @@ createRecipeList(recipePreviouslySearched);
    //appending recipe data to card 
 
   var image = $("<p>").addClass("card-image");
-  var imageUrl = response.hits[0].recipe.image; 
+  var imageUrl = randomRecipe.image; 
   var iconHtml = $("<img>").attr("src", imageUrl);
-  var recipeLink = $("<a>").attr("href", response.hits[0].recipe.shareAs).attr("target", "_blank").text("Read your recipe at " + response.hits[0].recipe.source);
-  var label = $("<p>").addClass("card-text").text(response.hits[0].recipe.label);
-  var recipeUrl = $("<p>").addClass("card-text").text(response.hits[0].recipe.shareAs);
-  var source = $("<p>").addClass("card-text").text(response.hits[0].recipe.source);
+  var recipeLink = $("<a>").attr("href", randomRecipe.shareAs).attr("target", "_blank").text("Read your recipe at " + randomRecipe.source);
+  var label = $("<p>").addClass("card-text").text(randomRecipe.label);
+  var recipeUrl = $("<p>").addClass("card-text").text(randomRecipe.shareAs);
+  var source = $("<p>").addClass("card-text").text(randomRecipe.source);
   
   image.append(iconHtml)
   $(".recipe-card").append(image, recipeLink, label, recipeUrl, source);
