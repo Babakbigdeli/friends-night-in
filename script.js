@@ -22,10 +22,11 @@ function createRecipeList(recipe) {
 //local storage for movie
 var moviePreviouslySearched = 
 JSON.parse(localStorage.getItem("movie")) || [];
+
 function createMovieList(movie) {
   $(".movie-history").empty();
   for (var i = 0; i < movie.length; i++) {
-    var listItem = $("<li>").text(recipe[i]);
+    var listItem = $("<li>").text(movie[i]);
     $(".movie-history").append(listItem);
     
   }
