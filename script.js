@@ -119,4 +119,6 @@ createMovieList(moviePreviouslySearched);
 });
 
 };
+createRecipeList(recipePreviouslySearched);
+createMovieList(moviePreviouslySearched);
 })
