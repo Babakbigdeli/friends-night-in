@@ -30,7 +30,7 @@ $(document).ready(function () {
   function createMovieList(movie) {
     $(".movie-history").empty();
     for (var i = 0; i < movie.length; i++) {
-      var listItem = $("<button>").text(movie[i]).attr("class", "button is-link is-outlined").attr("value", movie[i]);
+      var listItem = $("<button>").text(movie[i]).attr("class", "button is-danger is-outlined").attr("value", movie[i]);
       listItem.on("click", function(){
         movieData($(this).text())
         })
