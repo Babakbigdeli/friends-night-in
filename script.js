@@ -14,7 +14,7 @@ $(document).ready(function () {
   function createRecipeList(recipe) {
     $(".recipe-history").empty();
     for (var i = 0; i < recipe.length; i++) {
-      var listItem = $("<button>").text(recipe[i]).attr("class", "button").attr("value", recipe[i]);
+      var listItem = $("<button>").text(recipe[i]).attr("class", "button is-link is-outlined").attr("value", recipe[i]);
     listItem.on("click", function(){
       recipeData($(this).text())
       })
@@ -30,7 +30,7 @@ $(document).ready(function () {
   function createMovieList(movie) {
     $(".movie-history").empty();
     for (var i = 0; i < movie.length; i++) {
-      var listItem = $("<button>").text(movie[i]).attr("class", "button").attr("value", movie[i]);
+      var listItem = $("<button>").text(movie[i]).attr("class", "button is-danger is-outlined").attr("value", movie[i]);
       listItem.on("click", function(){
         movieData($(this).text())
         })
@@ -68,11 +68,10 @@ $(document).ready(function () {
       var iconHtml = $("<img>").attr("src", imageUrl);
       var recipeLink = $("<a>").attr("href", randomRecipe.shareAs).attr("target", "_blank").text("Read your recipe at " + randomRecipe.source);
       var label = $("<p>").addClass("card-text").text(randomRecipe.label);
-      var recipeUrl = $("<p>").addClass("card-text").text(randomRecipe.shareAs);
       var source = $("<p>").addClass("card-text").text(randomRecipe.source);
 
       image.append(iconHtml)
-      $(".recipe-card").append(image, recipeLink, label, recipeUrl, source);
+      $(".recipe-card").append(image, recipeLink, label, source);
 
       $(".level-left").append(card);
     });
