@@ -14,7 +14,7 @@ $(document).ready(function () {
   function createRecipeList(recipe) {
     $(".recipe-history").empty();
     for (var i = 0; i < recipe.length; i++) {
-      var listItem = $("<button>").text(recipe[i]).attr("class", "button").attr("value", recipe[i]);
+      var listItem = $("<button>").text(recipe[i]).attr("class", "button is-link is-outlined").attr("value", recipe[i]);
     listItem.on("click", function(){
       recipeData($(this).text())
       })
@@ -30,7 +30,7 @@ $(document).ready(function () {
   function createMovieList(movie) {
     $(".movie-history").empty();
     for (var i = 0; i < movie.length; i++) {
-      var listItem = $("<button>").text(movie[i]).attr("class", "button").attr("value", movie[i]);
+      var listItem = $("<button>").text(movie[i]).attr("class", "button is-link is-outlined").attr("value", movie[i]);
       listItem.on("click", function(){
         movieData($(this).text())
         })
