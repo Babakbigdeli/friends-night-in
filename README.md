@@ -34,3 +34,6 @@ Tracey - https://github.com/traceysaada
 Babak - https://github.com/Babakbigdeli 
 
 Screenshots:
+![desktop screenshot](./Assests/Screenshot-1.png)
+![mobile screenshot](./Assests/Screenshot-mobile-1.png)(./Assests/Screenshot-mobile-2.png)
+![local storage screenshot](./Assests/local-storage.png)
