@@ -1,45 +1,39 @@
 # friends-night-in
+User Story:
+As a User when I visit the website on desktop, I want to be presented with a split screen where I can then search for recipes or a movie.
 
-Omayma comments
+As a User when I search for a recipe using an ingredient, I am presented with a random meal and can then visit a webpage and see the full recipe.
+
+As a User when I search for a movie using a name, I am presented with the title of the movie, the poster, year of release and a list of the main actors. 
+
+When I search for a new recipe or movie I am able to see my previous searches in the form of buttons.
+
+I can click on the previous search buttons and they will direct me to the results of that search.
 
 
+Description:
+A fun, interactive site that allows users to input food ingredients and be presented with a recipe. Users can also search for any movie to pair with their food.
 
-Babak comments
+The web page is responsive to desktop, tablet and mobile devices. 
 
+The API keys used are: https://api.edamam.com/search?app_id=40897fdb&app_key=e7085ffc3bbf333e4fcc1dfd79fa54fd&q= https://developer.edamam.com/edamam-docs-recipe-api (for the recipe) and https://www.omdbapi.com/?apikey=e7dd88c3&t= http://www.omdbapi.com/ (for the movie). 
 
+The Recipe API key was used to collect data on the title of the dish, image, source and active URL to the full recipe. 
 
-Tracey comments
+The Movie API key was used to collect data on the title of the movie, poster, year of release and main actors.
 
+The CSS framework used is Bulma: https://bulma.io/ 
 
+Bulma was selected as the responsiveness fitted our criteria, the features suited the aesthetic we were aiming for and the overall website was easy to navigate. 
 
-a web application that helps you choose the perfect food and movie combination.
+Deployed Link:
 
-User Story:When the user enters the site they are presented with a horizontally split screen which allows them to input data in relation to their food and movie preferences. 
+Contributors Git Hub Links:
+Omayma - https://github.com/omaymaahmad 
+Tracey - https://github.com/traceysaada
+Babak - https://github.com/Babakbigdeli 
 
-The site then takes the input and uses the API keys to find a food recipe that fits the requirements. The user is finally presented with a results page that shows the selected food and movie combination.Version 
-
-As a User I am presented with a split screenWhere I can first select my recipe requirements from multiple drop down options
-
-I then submit my food preferences Then on the second half of the screen 
-
-I am presented with multiple criteria to select my movieI then submit my movie criteriaFinally 
-
-I am presented with a results page which displays my recipe and movie combinationRough Breakdown of Tasks:-Set up repo, with added collaborators and set branch rules. 
-
-Initial set up of HTML, CSS and JavaScript.
-
-Sort out the HTML/CSS layout of the first page.
-
-Use JavaScript/JQuery to create the first API key recipe function to test one element.
-
-Test this – if good slowly build the elements. 
-
-Create submit button, that saves the input data to local storage.
-
-Use JavaScript/JQuery to create the API movie function.
-
-Again test with one criteria before adding the others. 
-
-Create another submit button to save the movie input data – also stored to local storage. 
-
-Build the final page to retrieve the data stored in local storage and present the combined data. 
+Screenshots:
+![desktop screenshot](./Assests/Screenshot-1.png)
+![mobile screenshot](./Assests/Screenshot-mobile-1.png)(./Assests/Screenshot-mobile-2.png)
+![local storage screenshot](./Assests/local-storage.png)
