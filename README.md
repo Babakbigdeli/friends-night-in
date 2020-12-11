@@ -26,7 +26,7 @@ The CSS framework used is Bulma: https://bulma.io/
 
 Bulma was selected as the responsiveness fitted our criteria, the features suited the aesthetic we were aiming for and the overall website was easy to navigate. 
 
-Deployed Link:
+Deployed Link: https://omaymaahmad.github.io/friends-night-in/ 
 
 Contributors Git Hub Links:
 Omayma - https://github.com/omaymaahmad 
